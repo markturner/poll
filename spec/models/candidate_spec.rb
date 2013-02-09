@@ -9,6 +9,8 @@ describe Candidate do
     [:party, :constituency].each do |attr|
       it { should belong_to(attr) }
     end
+
+    it { should have_many(:responses) }
   end
 
   describe "validations" do

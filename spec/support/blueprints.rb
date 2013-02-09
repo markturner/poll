@@ -15,3 +15,8 @@ end
 Constituency.blueprint do
   name          { Faker::Address.city }
 end
+
+Response.blueprint do
+  will_vote     { true }
+  candidate
+end
