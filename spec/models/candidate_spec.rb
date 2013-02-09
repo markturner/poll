@@ -38,4 +38,10 @@ describe Candidate do
       end
     end
   end
+
+  describe "#to_s" do
+    it "returns candidate name and party" do
+      candidate.to_s.should eq "#{candidate.name} (#{candidate.party})"
+    end
+  end
 end

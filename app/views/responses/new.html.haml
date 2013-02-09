@@ -1,0 +1,5 @@
+= simple_form_for @response do |f|
+  = f.input :will_vote, as: :radio, label: "Are you going to vote?"
+  = f.input :candidate_id, as: :select, collection: Candidate.all, label: "Who are you going to vote for?"
+
+  = f.submit "Submit"

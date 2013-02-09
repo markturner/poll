@@ -9,7 +9,7 @@ end
 
 Party.blueprint do
   abbreviation  { Faker::Lorem.word }
-  full_name     { Faker::Lorem.words }
+  full_name     { Faker::Lorem.words.join }
 end
 
 Constituency.blueprint do

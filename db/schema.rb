@@ -42,10 +42,14 @@ ActiveRecord::Schema.define(:version => 20130209120827) do
   create_table "responses", :force => true do |t|
     t.boolean  "will_vote"
     t.integer  "candidate_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "constituency_id"
+    t.integer  "party_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   add_index "responses", ["candidate_id"], :name => "index_responses_on_candidate_id"
+  add_index "responses", ["constituency_id"], :name => "index_responses_on_constituency_id"
+  add_index "responses", ["party_id"], :name => "index_responses_on_party_id"
 
 end

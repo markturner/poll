@@ -6,7 +6,9 @@ describe Party do
       it { should allow_mass_assignment_of(attr) }
     end
 
-    it { should have_many(:candidates) }
+    [:candidates, :responses].each do |assoc|
+      it { should have_many(assoc) }
+    end
   end
 
   describe "validations" do
@@ -23,6 +25,22 @@ describe Party do
     it "fails validation with invalid abbreviation" do
       party.abbreviation = nil
       party.should_not be_valid
+    end
+  end
+
+  describe "#to_s" do
+    context "with full name" do
+      it "returns party full name" do
+        party.to_s.should eq party.full_name
+      end
+    end
+
+    context "without full name" do
+      before { party.full_name = nil }
+
+      it "returns party abbreviation" do
+        party.to_s.should eq party.abbreviation
+      end
     end
   end
 end

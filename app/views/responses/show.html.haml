@@ -1,0 +1,11 @@
+%p Thanks for responding!
+
+- if @response.will_vote?
+  %p
+    You have said that you will vote for
+    = @response.candidate
+
+- else
+  %p You have said that you will not vote.
+
+%p= link_to "View results", constituency_responses_path(constituency: @response.candidate.constituency)

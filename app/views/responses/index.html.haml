@@ -1,0 +1,27 @@
+- if @constituency.present?
+  %h2 Responses for #{@constituency}
+
+  %dl
+    %dt Will vote
+    %dd= @constituency.responses.where(will_vote: true).count
+    %dt Will not vote
+    %li= @constituency.responses.where(will_vote: false).count
+
+  %dl
+    - @constituency.candidates.each do |c|
+      %dt= c
+      %dd= c.vote_count
+
+%h2 Responses nationally
+
+%dl
+  %dt Will vote
+  %dd= Response.where(will_vote: true).count
+  %dt Will not vote
+  %dd= Response.where(will_vote: false).count
+
+%dl
+  - @uk_parties.each do |p|
+    - if p.vote_count > 0
+      %dt= p
+      %dd= p.vote_count

@@ -4,7 +4,9 @@ describe Constituency do
   describe "associations and attributes" do
     it { should allow_mass_assignment_of(:name) }
 
-    it { should have_many(:candidates) }
+    [:candidates, :responses].each do |assoc|
+      it { should have_many(assoc) }
+    end
   end
 
   describe "validations" do
@@ -21,6 +23,12 @@ describe Constituency do
     it "fails validation with invalid name" do
       constituency.name = nil
       constituency.should_not be_valid
+    end
+  end
+
+  describe "#to_s" do
+    it "returns constituency name" do
+      constituency.to_s.should eq constituency.name
     end
   end
 end
