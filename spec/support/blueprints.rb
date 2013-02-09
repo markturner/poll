@@ -1,21 +1,17 @@
 require 'machinist/active_record'
 
-# Add your blueprints here.
-#
-# e.g.
-#   Post.blueprint do
-#     title { "Post #{sn}" }
-#     body  { "Lorem ipsum..." }
-#   end
-
 Candidate.blueprint do
-  # Attributes here
+  name          { Faker::Name.name }
+  incumbent     { false }
+  party
+  constituency
 end
 
 Party.blueprint do
-  # Attributes here
+  abbreviation  { Faker::Lorem.word }
+  full_name     { Faker::Lorem.words }
 end
 
 Constituency.blueprint do
-  # Attributes here
+  name          { Faker::Address.city }
 end

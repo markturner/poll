@@ -1,5 +1,7 @@
 class Party < ActiveRecord::Base
-  attr_accessible :abbreviation, :name, :colour
+  attr_accessible :abbreviation, :full_name, :colour
 
   has_many :candidates
+
+  validates :abbreviation, presence: true
 end
