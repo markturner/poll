@@ -1,0 +1,38 @@
+!!! 5
+%html
+  %head
+    %title Poll
+
+    %meta{"charset" => "utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", "content" => "IE=edge,chrome=1"}
+    %meta{"name" => "description", "content" => ""}
+    %meta{"name" => "viewport", "content" => "width=device-width"}
+    = csrf_meta_tags
+
+    = stylesheet_link_tag "application", :media => "all"
+
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+
+  %body
+    %header.container_12
+      = render 'layouts/header'
+
+    #main
+      #flash
+        .container_12
+          .grid_10.suffix_1.prefix_1
+            .messages
+              - if notice.present?
+                %p.notice= notice
+              - if alert.present?
+                %p.alert= alert
+          .clear
+      #body.container_12
+        = yield
+
+    %footer.container_12
+      = render "layouts/footer"
+
+    = javascript_include_tag "application"
+    = yield(:javascript)
