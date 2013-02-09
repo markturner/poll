@@ -1,0 +1,15 @@
+# ignore database settings
+/config/database.yml
+
+# ignore RVM config
+.rvmrc
+
+# ignore bundler config
+/.bundle
+
+# ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# ignore OS X view files
+.DS_Store

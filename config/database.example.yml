@@ -1,0 +1,16 @@
+common: &common
+  adapter: postgresql
+  username:
+  password:
+
+development:
+  <<: *common
+  database: poll_development
+
+test:
+  <<: *common
+  database: poll_test
+
+production:
+  <<: *common
+  database: poll_production
