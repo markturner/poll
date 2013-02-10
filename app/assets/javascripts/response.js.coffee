@@ -1,5 +1,5 @@
 # initial state
-if $("input[name$='response[will_vote]']").val() == 'true'
+if $("input[name$='response[will_vote]']:checked").val() == 'true'
   $("#candidate_field").show()
 else
   $("#candidate_field").hide()
