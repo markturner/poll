@@ -19,3 +19,12 @@ Run RSpec tests with 'guard'.
 == Known issues
 
 A few constituency names differ between the data source and the mapit service, so they won't be found.
+
+== Next steps
+
+* fix the above issue
+* add user verification to ensure people could only vote once
+* improve the appearance
+* make the urls nicer, by displaying the constituency name instead of its id
+* refactor the constituency find_by_address method and write tests for it
+* fix the tests for response validation (currently marked as pending)
