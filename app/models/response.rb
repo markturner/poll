@@ -1,12 +1,12 @@
 class Response < ActiveRecord::Base
-  attr_accessible :will_vote, :candidate_id
+  attr_accessible :will_vote, :candidate_id, :constituency
 
   belongs_to :candidate
   belongs_to :constituency
   belongs_to :party
 
   validates :will_vote, inclusion: { in: [true, false] }
-  validates :candidate, :constituency, :party, presence: true
+  validates :candidate, :constituency, :party, presence: true, if: :will_vote?
 
   before_validation :assign_associations
   def assign_associations

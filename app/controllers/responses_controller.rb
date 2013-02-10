@@ -8,7 +8,14 @@ class ResponsesController < ApplicationController
   end
 
   def new
-    respond_with @response = Response.new
+    if params[:location]
+      if constituency = Constituency.find_by_address(params[:location][:address])
+        respond_with @response = Response.new(constituency: constituency)
+      else
+        flash.now[:alert] = 'Sorry, this location could not be found. Please try another.' unless constituency
+        respond_with @response = Response.new
+      end
+    end
   end
 
   def create

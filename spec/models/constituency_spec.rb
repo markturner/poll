@@ -31,4 +31,8 @@ describe Constituency do
       constituency.to_s.should eq constituency.name
     end
   end
+
+  describe ".find_by_address" do
+    pending
+  end
 end

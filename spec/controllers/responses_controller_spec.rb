@@ -32,14 +32,24 @@ describe ResponsesController do
   end
 
   describe "GET 'new'" do
-    before { get :new }
+    context "with address" do
+      before { get :new, "location"=>{"address"=>"cf11"} }
 
-    it "assigns response" do
-      assigns(:response).should_not be_nil
+      it "assigns response" do
+        assigns(:response).should_not be_nil
+      end
+
+      it "is successful" do
+        response.should be_success
+      end
     end
 
-    it "is successful" do
-      response.should be_success
+    context "without address" do
+      before { get :new }
+
+      it "is successful" do
+        response.should be_success
+      end
     end
   end
 

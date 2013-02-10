@@ -1,5 +1,14 @@
-= simple_form_for @response do |f|
-  = f.input :will_vote, as: :radio, label: "Are you going to vote?"
-  = f.input :candidate_id, as: :select, collection: Candidate.all, label: "Who are you going to vote for?"
+- if @response.try(:constituency).present?
+  %p
+    Your constituency is
+    %b= @response.constituency
+  = simple_form_for @response do |f|
+    = f.input :will_vote, as: :radio, label: "Are you going to vote?"
+    = f.input :candidate_id, as: :select, collection: @response.constituency.candidates, label: "Who are you going to vote for?"
 
-  = f.submit "Submit"
+    = f.submit "Submit"
+
+- else
+  = simple_form_for "location", method: :post do |f|
+    = f.input "address"
+    = f.submit "Find"

@@ -1,27 +1,31 @@
 - if @constituency.present?
   %h2 Responses for #{@constituency}
 
+  %h3 Are you going to vote?
   %dl
     %dt Will vote
     %dd= @constituency.responses.where(will_vote: true).count
     %dt Will not vote
-    %li= @constituency.responses.where(will_vote: false).count
+    %dd= @constituency.responses.where(will_vote: false).count
 
+  %h3 Who are you going to vote for?
   %dl
     - @constituency.candidates.each do |c|
       %dt= c
-      %dd= c.vote_count
+      %dd= c.responses.count
 
 %h2 Responses nationally
 
+%h3 Are you going to vote?
 %dl
   %dt Will vote
   %dd= Response.where(will_vote: true).count
   %dt Will not vote
   %dd= Response.where(will_vote: false).count
 
+%h3 Who are you going to vote for?
 %dl
-  - @uk_parties.each do |p|
-    - if p.vote_count > 0
+  - Party.all.each do |p|
+    - if p.responses.count > 0
       %dt= p
-      %dd= p.vote_count
+      %dd= p.responses.count

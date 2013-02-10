@@ -32,7 +32,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# data
 gem 'httparty'
+gem 'geocoder'
 
 # views
 gem 'haml-rails'
