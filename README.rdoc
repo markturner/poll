@@ -9,3 +9,7 @@ Poll requires Ruby 1.9.3 and PostgreSQL.
 == Data
 
 Run rake db:seed to populate the database with sample data from the 2010 election (obtained from the Guardian's datablog here: http://www.guardian.co.uk/news/datablog/2010/may/07/uk-election-results-data-candidates-seats).
+
+== Tests
+
+Run RSpec tests with 'guard'.
