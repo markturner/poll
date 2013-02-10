@@ -23,11 +23,11 @@ class ResponsesController < ApplicationController
 
     if @response.save
       flash[:message] = "Thanks, your response has been counted"
+      respond_with @response
     else
-      flash[:alert] = "Oops, something went wrong"
+      flash[:alert] = "There was a problem with your response"
+      respond_with @response
     end
-
-    respond_with @response
   end
 
   def show

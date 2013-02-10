@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Response do
   describe "associations and attributes" do
-    [:will_vote, :candidate_id].each do |attr|
+    [:will_vote, :candidate_id, :constituency, :constituency_id].each do |attr|
       it { should allow_mass_assignment_of(attr) }
     end
 

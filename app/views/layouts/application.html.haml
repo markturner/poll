@@ -21,12 +21,11 @@
     #main
       #flash
         .container_12
-          .grid_10.suffix_1.prefix_1
-            .messages
-              - if notice.present?
-                %p.notice= notice
-              - if alert.present?
-                %p.alert= alert
+          .messages
+            - if notice.present?
+              %p.notice= notice
+            - if alert.present?
+              %p.alert= alert
           .clear
       #body.container_12
         = yield

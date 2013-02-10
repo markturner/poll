@@ -3,8 +3,9 @@
     Your constituency is
     %b= @response.constituency
   = simple_form_for @response do |f|
-    = f.input :will_vote, as: :radio, label: "Are you going to vote?"
-    = f.input :candidate_id, as: :select, collection: @response.constituency.candidates, label: "Who are you going to vote for?"
+    = f.input :constituency_id, as: :hidden, value: @response.constituency.id
+    = f.input :will_vote, as: :radio, label: "Are you going to vote?", wrapper_html: { id: 'will_vote_field' }
+    = f.input :candidate_id, as: :select, collection: @response.constituency.candidates, label_method: :to_s, label: "Who are you going to vote for?", wrapper_html: { id: "candidate_field"}
 
     = f.submit "Submit"
 

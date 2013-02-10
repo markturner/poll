@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+# initial state
+if $("input[name$='response[will_vote]']").val() == 'true'
+  $("#candidate_field").show()
+else
+  $("#candidate_field").hide()
+
+# show when will vote is true, hide when false
+$("input[name$='response[will_vote]']").click ->
+  if $(@).val() == 'true'
+    $("#candidate_field").show()
+  else
+    $("#candidate_field").hide()
