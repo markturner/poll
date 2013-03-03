@@ -6,6 +6,8 @@ class Party < ActiveRecord::Base
 
   validates :abbreviation, presence: true
 
+  scope :with_votes, where("parties.id IN (SELECT party_id FROM responses)")
+
   def to_s
     full_name.present? ? full_name : abbreviation
   end
