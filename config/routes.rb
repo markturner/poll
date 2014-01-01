@@ -6,5 +6,12 @@ Poll::Application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :responses
+      resources :constituencies
+    end
+  end
+
   root to: 'responses#new'
 end

@@ -42,3 +42,4 @@ gem 'simple_form'
 
 # behaviour
 gem 'jquery-rails'
+gem 'ember-rails'

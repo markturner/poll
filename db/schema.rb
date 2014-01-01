@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(:version => 20130209120827) do
 
   create_table "candidates", :force => true do |t|
     t.string   "name"
-    t.boolean  "incumbent"
+    t.boolean  "incumbent",       :default => false
     t.integer  "party_id"
     t.integer  "constituency_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   add_index "candidates", ["constituency_id"], :name => "index_candidates_on_constituency_id"
