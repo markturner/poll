@@ -4,5 +4,4 @@ class ResponseSerializer < ActiveModel::Serializer
 
   has_one :candidate, key: :candidate
   has_one :constituency, key: :constituency
-  # has_one :party
 end

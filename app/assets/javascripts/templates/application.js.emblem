@@ -1,0 +1,10 @@
+.navbar.navbar-fixed-top: .navbar-inner: .container: .nav-collapse.collapse
+  ul.nav
+    li class=isHome:active
+      link-to 'constituencies' | Home
+    li class=isResults:active
+      link-to 'responses' | Results
+
+#main.container: .content: .row: .span12
+  .page-header
+  = outlet

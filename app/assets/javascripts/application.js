@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require bootstrap
+//= require_self
+//= require poll
+
+window.Poll = Ember.Application.create();

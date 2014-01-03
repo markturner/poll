@@ -10,29 +10,10 @@
     = csrf_meta_tags
 
     = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = yield(:javascript)
 
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
 
   %body
-    %header.container_12
-      = render 'layouts/header'
-
-    #main
-      #flash
-        .container_12
-          .messages
-            - if notice.present?
-              %p.notice= notice
-            - if alert.present?
-              %p.alert= alert
-          .clear
-      #body.container_12
-        = yield
-
-    %footer.container_12
-      = render "layouts/footer"
-
-    = javascript_include_tag "application"
-    = yield(:javascript)
-

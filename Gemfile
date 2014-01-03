@@ -38,7 +38,11 @@ gem 'geocoder'
 
 # views
 gem 'haml-rails'
+gem 'emblem-rails'
 gem 'simple_form'
+
+# styles
+gem 'bootstrap-sass'
 
 # behaviour
 gem 'jquery-rails'

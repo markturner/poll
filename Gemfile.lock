@@ -35,6 +35,11 @@ GEM
       ember-source
       execjs
       handlebars-source
+    barber-emblem (0.1.1)
+      barber (>= 0.4.1)
+      emblem-source
+    bootstrap-sass (2.3.0.0)
+      sass (~> 3.2)
     bourne (1.1.2)
       mocha (= 0.10.5)
     builder (3.0.4)
@@ -63,6 +68,10 @@ GEM
       railties (>= 3.1)
     ember-source (1.2.0.1)
       handlebars-source (~> 1.1.2)
+    emblem-rails (0.2.1)
+      barber-emblem (~> 0.1.1)
+      ember-rails (>= 0.14.0)
+    emblem-source (0.3.6)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -200,8 +209,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
   ember-rails
+  emblem-rails
   ffaker
   geocoder
   guard
