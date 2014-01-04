@@ -1,9 +1,1 @@
-h1 Live results
-
-ul#responses-list
-  li test
-  each
-    li = candidate.party.abbreviation
-
-.response
-  = outlet
+= outlet

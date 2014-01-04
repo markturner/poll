@@ -1,7 +1,7 @@
-.navbar.navbar-fixed-top: .navbar-inner: .container: .nav-collapse.collapse
+.navbar.navbar-inverse.navbar-fixed-top: .navbar-inner: .container: .nav-collapse.collapse
   ul.nav
     li class=isHome:active
-      link-to 'constituencies' | Home
+      link-to 'responses.new' | Home
     li class=isResults:active
       link-to 'responses' | Results
 

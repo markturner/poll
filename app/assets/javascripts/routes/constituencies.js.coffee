@@ -4,4 +4,4 @@ Poll.ConstituenciesRoute = Ember.Route.extend
 
 Poll.ConstituencyRoute = Ember.Route.extend
   model: (params) ->
-    @get('store').find('constituency', params.id)
+    @store.find('constituency', params.id)

@@ -1,17 +1,21 @@
-Poll.ResponsesRoute = Ember.Route.extend
+Poll.ResponsesIndexRoute = Ember.Route.extend
   model: ->
-    @get('store').find('response')
+    @store.find('response')
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'responses')
-    controller.set("content", model)
+    controller.set('content', model)
 
 Poll.ResponseRoute = Ember.Route.extend
   model: (params) ->
-    @get('store').find('response', 1)
+    @store.find('party', params.id)
 
 Poll.ResponsesNewRoute = Ember.Route.extend
   model: ->
-    @get('store').createRecord('response')
+    @store.createRecord('response')
+
+  setupController: (controller, model) ->
+    @controllerFor('application').set('currentRoute', 'responses.new')
+    controller.set('content', model)
 
   actions:
     save: ->

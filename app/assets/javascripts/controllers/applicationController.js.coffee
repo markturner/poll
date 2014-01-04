@@ -1,6 +1,6 @@
 Poll.ApplicationController = Ember.Controller.extend
   isHome: (->
-    @get('currentRoute') == 'constituencies'
+    @get('currentRoute') == 'responses.new'
   ).property('currentRoute')
 
   isResults: (->

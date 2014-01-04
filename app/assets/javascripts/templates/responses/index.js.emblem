@@ -1,0 +1,12 @@
+h1 Results
+
+ul#responses-list
+  li
+    | Will vote: {{willVoteCount}}
+  li
+    | Won't vote: {{wontVoteCount}}
+
+canvas#chart width=400 height=400
+
+footer
+  link-to 'responses.new' | Start again
