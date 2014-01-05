@@ -1,9 +1,9 @@
-h1 Results
-
 .span6
   canvas#chart width=400 height=400
 
 .span5
+  h1 Results
+
   ul#responses-list
     li
       ' Will vote:
@@ -12,6 +12,4 @@ h1 Results
       ' Won't vote:
       span#wont-vote-count = wontVoteCount
 
-
-footer.span10
-  link-to 'responses.new' | Start again
+  link-to 'responses.new' | Start again?

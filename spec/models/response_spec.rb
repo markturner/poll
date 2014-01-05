@@ -26,7 +26,7 @@ describe Response do
         response.should be_valid
       end
 
-      [:will_vote, :candidate].each do |attr|
+      [:will_vote].each do |attr|
         it "fails validation with invalid #{attr}" do
           response.send("#{attr}=", nil)
           response.should_not be_valid

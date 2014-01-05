@@ -2,9 +2,8 @@ h1 Poll
 
 form submit='respond'
   fieldset
-    p Are you going to vote?
     label.checkbox
       view Ember.Checkbox checkedBinding=will_vote
-      = will_vote
+      | Are you going to vote?
   .form-actions
     input.btn.btn-primary type='submit'
