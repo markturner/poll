@@ -4,12 +4,14 @@
 .span5
   h1 Results
 
-  ul#responses-list
-    li
-      ' Will vote:
+  dl#responses-list
+    dt
+      | Will vote:
+    dd
       span#will-vote-count = willVoteCount
-    li
-      ' Won't vote:
+    dt
+      | Won't vote:
+    dd
       span#wont-vote-count = wontVoteCount
 
-  link-to 'responses.new' | Start again?
+  link-to 'responses.new' class='btn' | Start again?
