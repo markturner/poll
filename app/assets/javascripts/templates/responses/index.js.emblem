@@ -1,12 +1,17 @@
 h1 Results
 
-ul#responses-list
-  li
-    | Will vote: {{willVoteCount}}
-  li
-    | Won't vote: {{wontVoteCount}}
+.span6
+  canvas#chart width=400 height=400
 
-canvas#chart width=400 height=400
+.span5
+  ul#responses-list
+    li
+      ' Will vote:
+      span#will-vote-count = willVoteCount
+    li
+      ' Won't vote:
+      span#wont-vote-count = wontVoteCount
 
-footer
+
+footer.span10
   link-to 'responses.new' | Start again

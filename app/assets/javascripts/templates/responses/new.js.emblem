@@ -3,11 +3,8 @@ h1 Poll
 form submit='respond'
   fieldset
     p Are you going to vote?
-    label.radio
-      view Ember.RadioButton name='will_vote' selectionBinding='willVote' valueBinding='will_vote' value='1'
-      | Yes
-    label.radio
-      view Ember.RadioButton name='will_vote' selectionBinding='willVote' valueBinding='will_vote' value='0'
-      | No
+    label.checkbox
+      view Ember.Checkbox checkedBinding=will_vote
+      = will_vote
   .form-actions
     input.btn.btn-primary type='submit'

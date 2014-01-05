@@ -1,2 +1,7 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+canvas#chart {
+  height: 400px;
+  width: 400px;
+}

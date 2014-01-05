@@ -1,5 +1,4 @@
 Poll::Application.routes.draw do
-
   resources 'responses', to: 'home#index'
 
   namespace :api do

@@ -16,6 +16,7 @@
 //= require ember
 //= require ember-data
 //= require bootstrap
+//= require Chart.min
 //= require_self
 //= require poll
 
